@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('info_company', function (Blueprint $table) {
-            $table->integer('id_company')->primary();
-            $table->string('name-company', 50)->nullable();
-            $table->binary('img-company')->nullable();
+            $table->increments('id_company')->primary();
+            $table->string('name_company', 50)->nullable();
+            $table->string('img_company')->nullable();
             $table->string('description', 250)->nullable();
             $table->string('mision', 250)->nullable();
             $table->string('vision', 250)->nullable();
@@ -23,19 +23,20 @@ return new class extends Migration
             $table->string('tiktok', 100)->nullable();
             $table->string('number1', 50)->nullable();
             $table->string('number2', 50)->nullable();
-            $table->string('number3', 50)->nullable();
+            $table->string('number3', 50)->nullable();            
+            $table->string('img_head', 225)->nullable();
         });
 
         Schema::create('gallery', function (Blueprint $table) {
-            $table->integer('id_img')->primary();
+            $table->increments('id_img')->primary();
             $table->binary('img_gallery')->nullable();
             $table->string('name_img', 100)->nullable();
             $table->boolean('status')->nullable();
         });
 
-        Schema::create('principal_content', function (Blueprint $table) {
-            $table->integer('id_cont')->primary();
-            $table->binary('images')->nullable();
+        Schema::create('pricipal_content', function (Blueprint $table) {
+            $table->increments('id_cont')->primary();
+            $table->string('images')->nullable();
             $table->string('description', 250)->nullable();
             $table->string('titles', 50)->nullable();
             $table->string('subtitles', 50)->nullable();
@@ -43,24 +44,24 @@ return new class extends Migration
         });
 
         Schema::create('qandans', function (Blueprint $table) {
-            $table->integer('id_qandans')->primary();
+            $table->increments('id_qandans')->primary();
             $table->string('question', 100)->nullable();
             $table->string('answer', 100)->nullable();
         });
 
         Schema::create('reviews', function (Blueprint $table) {
-            $table->integer('id_rev')->primary();
-            $table->string('review-text', 250)->nullable();
-            $table->binary('review-img')->nullable();
-            $table->binary('review-vid')->nullable();
-            $table->string('review-description', 100)->nullable();
+            $table->increments('id_rev')->primary();
+            $table->string('review_text', 250)->nullable();
+            $table->string('review_img')->nullable();
+            $table->string('review_vid')->nullable();
+            $table->string('review_description', 100)->nullable();
         });
 
         Schema::create('services', function (Blueprint $table) {
-            $table->integer('id-services')->primary();
-            $table->binary('icon')->nullable();
+            $table->increments('id_services')->primary();
+            $table->string('icon')->nullable();
             $table->string('tittle', 50)->nullable();
-            $table->string('row', 50)->nullable();
+            $table->string('description', 100)->nullable();
         });
     }
 
@@ -69,6 +70,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('complete_database');
+        //
     }
 };

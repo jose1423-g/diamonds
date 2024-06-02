@@ -1,55 +1,40 @@
 <x-app-layout>
     
     <x-slot name="header">             
-        <div class="bg-center bg-no-repeat bg-cover rounded-md h-80" style="background-image: url(img/bg_playa.jpg)">
-            <div class="flex items-center justify-center h-full">                    
-                <h1 class="text-6xl font-bold text-white" style="text-shadow: 1px 1px 2px black">Diamond’s Crown Transfers</h1>
-            </div>
-        </div>        
+        @isset($info_company)
+            @foreach ($info_company as $row)
+                <div class="bg-center bg-no-repeat bg-cover rounded-md h-80" style="background-image: url(img/{{ $row->img_head }})">
+                    <div class="flex items-center justify-center h-full">                                    
+                        <h1 class="text-6xl font-bold text-white" style="text-shadow: 1px 1px 2px black">{{$row->name_company}}</h1>                           
+                    </div>
+                </div>  
+            @endforeach
+        @endisset      
     </x-slot>
- 
+    
     <div class="py-8">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6">
                     <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Services</h2>                    
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                                                                                            
-                        <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-sm">
-                            <img src="img/icons/airplane.png" alt="airplane" class="mb-3 size-12">                                
-                            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] dark:text-white">Aeropuerto</h5>
-                            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Al hospedaje ida y/o vuelta</p>
-                            <a href="{{ route('services') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
-                                View all services
-                                <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-                                </svg>
-                            </a>                            
-                        </div>
-
-                        <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-sm">                     
-                            <img src="img/icons/car.png" alt="car-icon" class="mb-3 size-12">
-                            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] dark:text-white">Cancún</h5>                            
-                            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Cualquier zona de cancún ida y/o vuelta</p>
-                            <a href="{{ route('services') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
-                                View all services
-                                <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-sm">
-                            <img src="img/icons/clock.png" alt="clock-icon" class="mb-3 size-12">
-                            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] dark:text-white">Servicio de transportación</h5>                            
-                            <p class="mb-3 font-normal text-gray-600 dark:text-gray-400">Renta de transportacion por hora</p>                                                    
-                            <a href="{{ route('services') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
-                                View all services
-                                <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-                                </svg>
-                            </a>
-                        </div>                        
+                        
+                        @isset($services)
+                            @foreach ($services as $row)
+                                <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-sm">
+                                    <img src="img/icons/{{ $row->icon }}" alt="icon" class="mb-3 size-12">                                
+                                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] dark:text-white">{{ $row->tittle }}</h5>
+                                    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">{{ $row->description }}</p>
+                                    <a href="{{ route('services') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
+                                        View all services
+                                        <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+                                        </svg>
+                                    </a>                            
+                                </div>
+                            @endforeach
+                        @endisset
+                        
                     </div>{{-- flex content --}}
                 </div>
             </div>
@@ -61,23 +46,26 @@
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6">                    
                     <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Frequently asked questions</h2>
-                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">                        
                         
+                        @isset($questions)
+                            @foreach ($questions as $row)
+                                <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-xs">
+                                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e]">{{ $row->question }}</h5>
+                                    <p class="mb-3 overflow-y-auto font-normal text-gray-500 dark:text-gray-400 max-h-24">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim excepturi ullam ea quasi perferendis vero similique facilis odit amet temporibus ipsum sed asperiores perspiciatis commodi, a provident libero nobis.
+                                    </p>                            
+                                    <a href="{{ route('questions') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
+                                        View all questions
+                                        <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            @endforeach
+                        @endisset
                         
-                        <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-xs">
-                            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e]">¿Que tipo de vehículos se utilizan?</h5>
-                            <p class="mb-3 overflow-y-auto font-normal text-gray-500 dark:text-gray-400 max-h-24">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim excepturi ullam ea quasi perferendis vero similique facilis odit amet temporibus ipsum sed asperiores perspiciatis commodi, a provident libero nobis.
-                            </p>                            
-                            <a href="{{ route('questions') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
-                                View all questions
-                                <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-                                </svg>
-                            </a>
-                        </div>
-                        
-                        <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-xs">
+                        {{-- <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-xs">
                             <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e]">¿El servicio de transporte es privado?</h5>
                             <p class="mb-3 overflow-y-auto font-normal text-gray-500 dark:text-gray-400 max-h-24">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim excepturi ullam ea quasi perferendis vero similique facilis odit amet temporibus ipsum sed asperiores perspiciatis commodi, a provident libero nobis.
@@ -101,7 +89,7 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
                                 </svg>
                             </a>
-                        </div>
+                        </div> --}}
                         
                     </div>
                 </div>
