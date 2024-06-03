@@ -2,14 +2,19 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
+// Route::get('/services', function () {
+//     return view('services');
+// })->name('services');
+
+
+Route::get('/services', [PostController::class, 'GetServices'])->name('services');
+
 
 Route::get('/about', function () {
     return view('about');

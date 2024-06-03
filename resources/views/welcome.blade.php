@@ -34,7 +34,7 @@
                                 </div>
                             @endforeach
                         @endisset
-                        
+
                     </div>{{-- flex content --}}
                 </div>
             </div>
@@ -53,7 +53,7 @@
                                 <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-xs">
                                     <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e]">{{ $row->question }}</h5>
                                     <p class="mb-3 overflow-y-auto font-normal text-gray-500 dark:text-gray-400 max-h-24">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim excepturi ullam ea quasi perferendis vero similique facilis odit amet temporibus ipsum sed asperiores perspiciatis commodi, a provident libero nobis.
+                                        {{ $row->answer }}
                                     </p>                            
                                     <a href="{{ route('questions') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
                                         View all questions
@@ -63,33 +63,7 @@
                                     </a>
                                 </div>
                             @endforeach
-                        @endisset
-                        
-                        {{-- <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-xs">
-                            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e]">¿El servicio de transporte es privado?</h5>
-                            <p class="mb-3 overflow-y-auto font-normal text-gray-500 dark:text-gray-400 max-h-24">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim excepturi ullam ea quasi perferendis vero similique facilis odit amet temporibus ipsum sed asperiores perspiciatis commodi, a provident libero nobis.
-                            </p>
-                            <a href="{{ route('questions') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
-                                View all questions
-                                <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-xs">
-                            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e]">¿Existe algún descuento si es un servicio redondo?</h5>
-                            <p class="mb-3 overflow-y-auto font-normal text-gray-600 dark:text-gray-400 max-h-24">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim excepturi ullam ea quasi perferendis vero similique facilis odit amet temporibus ipsum sed asperiores perspiciatis commodi, a provident libero nobis.
-                            </p>
-                            <a href="{{ route('questions') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
-                                View all questions
-                                <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-                                </svg>
-                            </a>
-                        </div> --}}
+                        @endisset                                             
                         
                     </div>
                 </div>
@@ -107,25 +81,14 @@
                         <!-- Carousel wrapper -->
                         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                             <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="img/gallery_1.jpeg" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="img/gallery_3.jpeg" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="img/gallery_4.jpeg" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-                            </div>
-                            <!-- Item 4 -->
-                            {{-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-                            </div> --}}
-                            <!-- Item 5 -->
-                            {{-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-                            </div> --}}
+                            @isset($gallery)
+                                @foreach ($gallery as $row)
+                                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                        <img src="img/{{ $row->img_gallery }}" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                                    </div>    
+                                @endforeach
+                            @endisset
+                                                                                        
                         </div>
                         <!-- Slider controls -->
                         <button type="button" class="absolute top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer start-0 group focus:outline-none" data-carousel-prev>

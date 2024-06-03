@@ -27,6 +27,10 @@
                     <x-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
                         {{ __('Frequently asked questions') }}
                     </x-nav-link>
+                    <x-nav-link  data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="cursor-pointer" id="contact">
+                        {{ __('Contact us') }}
+                    </x-nav-link>
+                    
                     {{-- <x-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
                         {{ __('Your experiences') }}
                     </x-nav-link> --}}

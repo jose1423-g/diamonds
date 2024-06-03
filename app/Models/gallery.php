@@ -9,8 +9,8 @@ class gallery extends Model
 {
     use HasFactory;
 
-    // protected $table = 'contenido';
-    protected $primaryKey = 'id_img';
+    protected $table = 'gallery';
+    // protected $primaryKey = 'id_img';
 
     // protected $fillable = ['Titulo', 'Que_es'];
 

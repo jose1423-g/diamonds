@@ -33,6 +33,8 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+                <x-modal-contact>
+                </x-modal-contact>
             </main>
 
             @include('layouts.footer')

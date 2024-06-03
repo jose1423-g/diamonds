@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\services;
 use App\Models\info_company;
 use App\Models\qandans;
+use App\Models\gallery;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,12 +28,14 @@ class AppServiceProvider extends ServiceProvider
         try {                   
             $services =  services::take(3)->get();
             $info_company = info_company::all();
-            $questions =  qandans::take(3)->get();
-            
+            $questions = qandans::take(3)->get();
+            $gallery = gallery::take(3)->get();
+
             View::share([
                 'services' => $services,
                 'info_company' => $info_company,
-                'questions' => $questions,                
+                'questions' => $questions,      
+                'gallery' => $gallery,
             ]);                
         } catch (\Throwable $th) {            
             dd("Error");
