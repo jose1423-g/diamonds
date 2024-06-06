@@ -4,7 +4,7 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6">                    
-                    <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Our Services</h2>
+                    <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Nuestros Servicios</h2>
                     @isset($info_company)
                         @foreach ($info_company as $row)
                             <p class="mb-4 font-normal text-gray-500 dark:text-gray-400">En {{$row->name_company}}, nos preocupamos en ofrecer servicio de transporte turístico, poniendo  especial atención en la seguridad, puntualidad,  y atención a sus requerimientos. Desde traslados aeropuerto - hotel - aeropuerto, hasta transporte a cualquier lugar de la Riviera Maya.<br>

@@ -8,25 +8,15 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-// Route::get('/services', function () {
-//     return view('services');
-// })->name('services');
-
-
-Route::get('/services', [PostController::class, 'GetServices'])->name('services');
-
-
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/galery', function () {
-    return view('galery');
-})->name('galery');
+Route::get('/services', [PostController::class, 'GetServices'])->name('services');
 
-Route::get('/Frequently_asked_questions', function () {
-    return view('questions');
-})->name('questions');
+Route::get('/gallery', [PostController::class, 'GetGallery'])->name('gallery');
+
+Route::get('/Frequently_asked_questions', [PostController::class, 'GetQuestions'])->name('questions');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -16,7 +16,7 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6">
-                    <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Services</h2>                    
+                    <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Servicios</h2>                    
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                         
                         @isset($services)
@@ -45,7 +45,7 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6">                    
-                    <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Frequently asked questions</h2>
+                    <h2 class="mb-4 text-4xl font-bold text-center lg:text-left text-[#10346e]">Preguntas Frecuentes</h2>
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">                        
                         
                         @isset($questions)
@@ -84,7 +84,7 @@
                             @isset($gallery)
                                 @foreach ($gallery as $row)
                                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="img/{{ $row->img_gallery }}" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                                        <img src="img/gallery/{{ $row->img_gallery }}" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
                                     </div>    
                                 @endforeach
                             @endisset
@@ -113,16 +113,5 @@
             </div>
         </div>
     </div>    
-
-    {{-- <div class="py-8">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6">                    
-                    <h1>holis</h1>
-                    Es muy importante para nostros saber como fue tu experencia, comparte tu experiencia con los demas usuarios.
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
 </x-app-layout>

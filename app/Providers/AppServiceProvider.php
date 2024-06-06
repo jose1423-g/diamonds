@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\URL;
 use App\Models\services;
 use App\Models\info_company;
 use App\Models\qandans;
@@ -24,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+        
         //retorna los datos de las tablas a todas las vistas
         try {                   
             $services =  services::take(3)->get();

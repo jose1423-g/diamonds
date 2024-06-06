@@ -13,22 +13,22 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 lg:-my-px lg:ms-10 lg:flex">
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
-                        {{ __('Home') }}
+                        {{ __('Inicio') }}
                     </x-nav-link>
                     <x-nav-link :href="route('services')" :active="request()->routeIs('services')">
-                        {{ __('Services') }}
+                        {{ __('Servicios') }}
                     </x-nav-link>
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                        {{ __('About') }}
+                        {{ __('Acerca de') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('galery')" :active="request()->routeIs('galery')">
-                        {{ __('Gallery') }}
+                    <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')">
+                        {{ __('Galería') }}
                     </x-nav-link>
                     <x-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
-                        {{ __('Frequently asked questions') }}
+                        {{ __('Preguntas Frecuentes') }}
                     </x-nav-link>
                     <x-nav-link  data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="cursor-pointer" id="contact">
-                        {{ __('Contact us') }}
+                        {{ __('Contáctanos') }}
                     </x-nav-link>
                     
                     {{-- <x-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
@@ -122,7 +122,7 @@
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 {{ __('About') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('galery')" :active="request()->routeIs('galery')">
+            <x-responsive-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')">
                 {{ __('Gallery') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
