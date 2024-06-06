@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
                 'gallery' => $gallery,
             ]);                
         } catch (\Throwable $th) {            
-            dd("Error");
+            // dd("Error");
         }
     }
 }
