@@ -128,9 +128,9 @@
             <x-responsive-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
                 {{ __('Preguntas Frecuentes') }}
             </x-responsive-nav-link>
-            <x-nav-link  data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="cursor-pointer" id="contact">
+            <x-responsive-nav-link data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="cursor-pointer" id="contact">
                 {{ __('Contáctanos') }}
-            </x-nav-link>
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
