@@ -18,9 +18,9 @@ return new class extends Migration
             $table->binary('DESCRIPTION')->nullable();
             $table->binary('mision')->nullable();
             $table->binary('vision')->nullable();
-            $table->string('facebook', 100)->nullable();
-            $table->string('instagram', 100)->nullable();
-            $table->string('tiktok', 100)->nullable();
+            $table->string('facebook', 225)->nullable();
+            $table->string('instagram', 225)->nullable();
+            $table->string('tiktok', 225)->nullable();
             $table->string('number1', 50)->nullable();
             $table->string('number2', 50)->nullable();
             $table->string('number3', 50)->nullable();            
@@ -46,7 +46,7 @@ return new class extends Migration
         Schema::create('qandans', function (Blueprint $table) {
             $table->increments('id_qandans')->primary();
             $table->string('question', 100)->nullable();
-            $table->string('answer', 100)->nullable();
+            $table->string('answer', 255)->nullable();
         });
 
         Schema::create('reviews', function (Blueprint $table) {
