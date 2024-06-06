@@ -114,23 +114,23 @@
         
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
-                {{ __('Dashboard') }}
+                {{ __('Inicio') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services')">
-                {{ __('Services') }}
+                {{ __('Servicios') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                {{ __('About') }}
+                {{ __('Acerca de') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')">
-                {{ __('Gallery') }}
+                {{ __('Galería') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
-                {{ __('Frequently asked questions') }}
+                {{ __('Preguntas Frecuentes') }}
             </x-responsive-nav-link>
-            {{-- <x-responsive-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
-                {{ __('Your experiences') }}
-            </x-responsive-nav-link> --}}
+            <x-nav-link  data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="cursor-pointer" id="contact">
+                {{ __('Contáctanos') }}
+            </x-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
