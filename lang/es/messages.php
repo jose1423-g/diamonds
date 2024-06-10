@@ -12,6 +12,7 @@ $a_data_services = [];
 $a_questions = qandans::all();
 foreach($a_questions as $row){
     $a_data_question[$row->question] = $row->question;
+    $a_data_question[$row->answer] = $row->answer;
 }
 
 $a_info_company = info_company::select('DESCRIPTION', 'mision', 'vision')->get();
