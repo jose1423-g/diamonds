@@ -13,33 +13,54 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 lg:-my-px lg:ms-10 lg:flex">
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
-                        {{ __('Inicio') }}
+                        {{ __('messages.Inicio') }}
                     </x-nav-link>
                     <x-nav-link :href="route('services')" :active="request()->routeIs('services')">
-                        {{ __('Servicios') }}
+                        {{ __('messages.Servicios') }}
                     </x-nav-link>
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                        {{ __('Acerca de') }}
+                        {{ __('messages.Acerca de') }}
                     </x-nav-link>
                     <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')">
-                        {{ __('Galería') }}
+                        {{ __('messages.Galería') }}
                     </x-nav-link>
                     <x-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
-                        {{ __('Preguntas Frecuentes') }}
+                        {{ __('messages.Preguntas Frecuentes') }}
                     </x-nav-link>
                     <x-nav-link  data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="cursor-pointer" id="contact">
-                        {{ __('Contáctanos') }}
-                    </x-nav-link>
-                    
-                    {{-- <x-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
-                        {{ __('Your experiences') }}
-                    </x-nav-link> --}}
+                        {{ __('messages.Contáctanos') }}
+                    </x-nav-link>                                        
                 </div>                
             </div>
+            
+           <div class="flex items-center">
+            <x-dropdown-lang>                
+                <x-slot name="btn_dropdown">
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                        @if (App::getLocale() == 'en')
+                            <p>{{ __('messages.Ingles') }}</p>
+                        @elseif (App::getLocale() == 'es')
+                            <p>{{ __('messages.Español') }}</p>
+                        @endif
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                </x-slot>
+                <x-slot name="content">
+                    <li>
+                        <a href="{{ route('en_es', 'en') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ __('messages.Ingles') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('en_es', 'es') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ __('messages.Español') }}</a>
+                    </li>                    
+                </x-slot>
+            </x-dropdown-lang>
+            </div> 
                         
             @auth            
                 <!-- Settings Dropdown -->
-                <div class="hidden lg:flex lg:items-center lg:ms-6">
+                {{-- <div class="hidden lg:flex lg:items-center lg:ms-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
@@ -78,23 +99,20 @@
                             @endif
                         </x-slot>
                     </x-dropdown>
-                </div>  
-                
+                </div>                   --}}
             @else
-            
-                    {{-- @if (Route::has('login'))                    
-                        <div class="hidden space-x-8 lg:-my-px lg:ms-10 lg:flex">
-                            <x-nav-link :href="route('login')" class="mr-4">
-                                {{ __('Log in') }}
-                            </x-nav-link>
-                        @endif
-                        @if (Route::has('register'))
-                            <x-nav-link :href="route('register')">
-                                {{ __('Register') }}
-                            </x-nav-link >
-                        @endif                        
-                        </div>--}}
-
+                {{--@if (Route::has('login'))                    
+                     <div class="hidden space-x-8 lg:-my-px lg:ms-10 lg:flex">
+                        <x-nav-link :href="route('login')" class="mr-4">
+                            {{ __('Log in') }}
+                        </x-nav-link>
+                    @endif
+                    @if (Route::has('register'))
+                        <x-nav-link :href="route('register')">
+                            {{ __('Register') }}
+                        </x-nav-link >
+                    @endif                        
+                    </div> --}}                    
             @endauth
 
             <!-- Hamburger -->
@@ -114,29 +132,29 @@
         
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
-                {{ __('Inicio') }}
+                {{ __('messages.Inicio') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services')">
-                {{ __('Servicios') }}
+                {{ __('messages.Servicios') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                {{ __('Acerca de') }}
+                {{ __('messages.Acerca de') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')">
-                {{ __('Galería') }}
+                {{ __('messages.Galería') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('questions')" :active="request()->routeIs('questions')">
-                {{ __('Preguntas Frecuentes') }}
+                {{ __('messages.Preguntas Frecuentes') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="cursor-pointer" id="contact">
-                {{ __('Contáctanos') }}
+                {{ __('messages.Contáctanos') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">            
             @auth
-                <div class="px-4">
+                {{-- <div class="px-4">
                     <div class="text-base font-medium text-gray-800"> 
                         @if (isset(Auth::user()->name))
                             {{ Auth::user()->name }}
@@ -167,7 +185,7 @@
                             </x-responsive-nav-link>
                         </form>
                     @endif
-                </div>
+                </div> --}}
             @else
                 {{-- <div class="px-4">
                     @if (Route::has('login'))

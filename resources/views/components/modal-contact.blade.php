@@ -6,7 +6,7 @@
             <!-- Modal header -->
             <div class="flex items-center justify-between p-4 border-b rounded-t md:p-5 dark:border-gray-600">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                    Contáctanos
+                    {{ __('messages.Contáctanos') }}
                 </h3>
                 <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crypto-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -51,7 +51,7 @@
                                 <svg class="w-4 h-4 text-gray-500 ms-3 rtl:rotate-180 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/></svg>
                             </a>
                         </li>
-                        <h2 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] text-center">Siguenos en redes sociales</h2>
+                        <h2 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] text-center">{{ __('messages.Siguenos en redes sociales') }}</h2>
                         <li>
                             <a href="{{ $row->instagram }}" target="_blank" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">                                
                                 <img src="img/instagram.png" alt="icon" class="h-4">

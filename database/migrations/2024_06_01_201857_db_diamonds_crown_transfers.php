@@ -25,13 +25,9 @@ return new class extends Migration
             $table->string('number2', 50)->nullable();
             $table->string('number3', 50)->nullable();            
             $table->string('img_head', 225)->nullable();
-        });
-
-        Schema::create('gallery', function (Blueprint $table) {
-            $table->increments('id_img')->primary();
-            $table->binary('img_gallery')->nullable();
-            $table->string('name_img', 100)->nullable();
-            $table->boolean('status')->nullable();
+            $table->binary('description_en')->nullable();
+            $table->binary('vision_en')->nullable();
+            $table->binary('mision_en')->nullable();
         });
 
         Schema::create('pricipal_content', function (Blueprint $table) {
@@ -47,6 +43,8 @@ return new class extends Migration
             $table->increments('id_qandans')->primary();
             $table->string('question', 100)->nullable();
             $table->string('answer', 255)->nullable();
+            $table->binary('question_en')->nullable();
+            $table->binary('answer_en')->nullable();
         });
 
         Schema::create('reviews', function (Blueprint $table) {
@@ -62,14 +60,19 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->string('tittle', 50)->nullable();
             $table->string('description', 255)->nullable();
+            $table->string('tittle_en', 255)->nullable();
+            $table->binary('description_en')->nullable();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('info_company');
+        Schema::dropIfExists('pricipal_content');
+        Schema::dropIfExists('qandans');
+        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('services');
     }
 };

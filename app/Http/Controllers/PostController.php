@@ -10,7 +10,7 @@ use PhpParser\Node\Stmt\TryCatch;
 
 class PostController extends Controller
 {
-    //get services
+    
     public function GetServices () {
         try {
             $services = services::all();
