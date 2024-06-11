@@ -31,7 +31,7 @@ return array_merge([
     'Servicios' => 'Services',
     'Acerca de' => 'About',
     'Galería' => 'Gallery',
-    'Preguntas Frecuentes' => 'Frequent questions',
+    'Preguntas Frecuentes' => 'FAQ’s',
     'Contáctanos' => 'Contact us',
     'Ver todos los servicios' => 'View all services',
     'Ver todas las preguntas' => 'View all questions',    
