@@ -16,7 +16,7 @@
                         @isset($all_services)
                             @foreach ($all_services as $row)
                                 <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-sm">
-                                    <img src="img/icons/{{ $row->icon }}" alt="icon" class="mb-3 size-12">                                
+                                    <img src="img/icons/{{ $row->icon }}" alt="icon" class="mb-3 size-12 object-contain" width="48" height="48" loading="eager" fetchpriority="high" decoding="async">                                
                                     <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] dark:text-white">{{ __("messages.$row->tittle") }}</h5>
                                     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">{{  __("messages.$row->description") }}</p>                                    
                                 </div>

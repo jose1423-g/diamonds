@@ -9,7 +9,7 @@
                     @foreach ($gallery as $row)
                         <div class="grid gap-4">                            
                             <div>
-                                <img class="h-auto max-w-full rounded-lg" src="img/gallery/{{ $row->img_gallery }}" alt="">
+                                <img  src="img/gallery/{{ $row->img_gallery }}" class="h-auto max-w-full rounded-lg object-contain" width="100%" height="100%" loading="eager" fetchpriority="high" decoding="async">
                             </div>                            
                         </div>
                     @endforeach                        

@@ -22,7 +22,7 @@
                         @isset($services)
                             @foreach ($services as $row)
                                 <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow md:max-w-sm grow min-h-sm">
-                                    <img src="img/icons/{{ $row->icon }}" alt="icon" class="mb-3 size-12">                                
+                                    <img src="img/icons/{{ $row->icon }}" alt="icon" class="mb-3 size-12 object-contain" width="48" height="48" loading="eager" fetchpriority="high" decoding="async">
                                     <h5 class="mb-2 text-2xl font-semibold tracking-tight text-[#10346e] dark:text-white">{{ __("messages.$row->tittle") }}</h5>
                                     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">{{ __("messages.$row->description") }}</p>
                                     <a href="{{ route('services') }}" class="inline-flex items-center font-medium text-blue-800 hover:underline">
@@ -73,8 +73,7 @@
     <div class="py-8">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6">                                        
-                     
+                <div class="p-6">                                                         
                     <div id="gallery" class="relative w-full" data-carousel="slide">
                         <!-- Carousel wrapper -->
                         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -82,7 +81,7 @@
                             @isset($gallery)
                                 @foreach ($gallery as $row)
                                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="img/gallery/{{ $row->img_gallery }}" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                                        <img src="img/gallery/{{ $row->img_gallery }}" class="absolute block h-auto max-w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-contain" loading="eager" fetchpriority="high" decoding="async">
                                     </div>    
                                 @endforeach
                             @endisset

@@ -10,7 +10,7 @@ class gallery extends Model
     use HasFactory;
 
     protected $table = 'gallery';
-    // protected $primaryKey = 'id_img';
+    protected $primaryKey = 'id';
 
     // protected $fillable = ['Titulo', 'Que_es'];
 

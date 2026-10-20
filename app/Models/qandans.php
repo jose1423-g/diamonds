@@ -10,7 +10,7 @@ class qandans extends Model
     use HasFactory;
 
     // protected $table = 'contenido';
-    protected $primaryKey = 'id_qandans';
+    protected $primaryKey = 'id';
 
     // protected $fillable = ['Titulo', 'Que_es'];
 

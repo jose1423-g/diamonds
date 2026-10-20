@@ -10,7 +10,7 @@ class info_company extends Model
     use HasFactory;
 
     protected $table = 'info_company';
-    // protected $primaryKey = 'id_company';
+    protected $primaryKey = 'id';
 
     // protected $fillable = ['Titulo', 'Que_es'];
 

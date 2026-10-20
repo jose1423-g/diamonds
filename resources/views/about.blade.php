@@ -7,17 +7,17 @@
                     @foreach ($info_company as $row)
                         <div class="flex flex-col justify-center">
                             <div class="flex flex-col items-center p-4 mb-5 bg-white rounded shadow lg:flex-row">
-                                <img src="img/logo_head.png" alt="icon" class="w-full mr-4 max-w-80 max-h-80">
+                                <img src="img/logo_head.webp" alt="icon" class="w-full mr-4 max-w-80 max-h-80 object-contain" width="320" height="320" loading="eager" fetchpriority="high" decoding="async">
                                 <div class="text-center">
                                     <h2 class="mb-4 text-2xl font-semibold tracking-tight text-[#10346e]">{{ $row->name_company }}</h2>
                                     <p class="mb-3 font-normal text-gray-500">{{ __("messages.$row->DESCRIPTION") }}</p>
                                 </div>
                             </div>                            
-                        </div> 
+                        </div>
                         
                         <div class="flex flex-col justify-center">
                             <div class="flex flex-col items-center p-4 mb-5 bg-white rounded shadow lg:flex-row-reverse">
-                                <img src="img/mision.jpg" alt="icon" class="w-full mr-4 max-w-80 max-h-80">
+                                <img src="img/mision.webp" alt="icon" class="w-full mr-4 max-w-80 max-h-80 object-contain" width="320" height="320" loading="eager" fetchpriority="high" decoding="async">
                                 <div class="text-center">
                                     <h2 class="mb-4 text-2xl font-semibold tracking-tight text-[#10346e]"> {{ __('messages.Misión') }}</h2>
                                     <p class="mb-3 font-normal text-gray-500">{{  __("messages.$row->mision") }}</p>
@@ -27,7 +27,7 @@
 
                         <div class="flex flex-col justify-center">
                             <div class="flex flex-col items-center p-4 mb-5 bg-white rounded shadow lg:flex-row">                                
-                                <img src="img/vision.jpg" alt="icon" class="w-full mr-4 max-w-80 max-h-80">                                
+                                <img src="img/vision.webp" alt="icon" class="w-full mr-4 max-w-80 max-h-80 object-contain" width="320" height="320" loading="eager" fetchpriority="high" decoding="async">
                                 <div class="text-center">
                                     <h2 class="mb-4 text-2xl font-semibold tracking-tight text-[#10346e]"> {{ __('messages.Visión') }}</h2>
                                     <p class="mb-3 font-normal text-gray-500">{{ __("messages.$row->vision") }}</p>
